@@ -34,7 +34,7 @@ exports.index = function(req, res) {
   //   if(err) { return handleError(res, err); }
   //   return res.status(200).json(authenticates);
   // });
-  res.redirect("hype://login?access_token=aaa&token_type=token&state=&user_id=00000&display name=test");
+  res.redirect("hype://login?access_token=aaa&token_type=token&state=&user_id=00000&display_name=test");
 };
 
 //AQUI ES PER SI EM CRIDA AMB ELS OPCIONALS
