@@ -31,10 +31,17 @@ exports.show = function(req, res) {
 
 // Creates a new thing in the DB.
 exports.create = function(req, res) {
-  Thing.create(req.body, function(err, thing) {
-    if(err) { return handleError(res, err); }
-    return res.status(201).json(thing);
-  });
+  // Thing.create(req.body, function(err, thing) {
+  //   if(err) { return handleError(res, err); }
+  //   return res.status(201).json(thing);
+  // });
+  var new_thing = new Thing(req.body);
+    new_thing.save(function(err, thing){
+        if (err) throw err;
+        else{
+            res.status(200).json(thing);
+        }
+    });
 };
 
 // Updates an existing thing in the DB.
